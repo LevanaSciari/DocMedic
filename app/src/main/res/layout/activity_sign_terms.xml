@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SignTermsActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="סטודנטים - עבודה"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/llBtns"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="20dp">
+
+        <TextView
+            android:id="@+id/tvTerms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="קגי'קשוןגי'וןשיגוןשי'גוןש'יון גיון'שיגןוש'יגון 'שיגון'שיגוןש'יגוןש י'ןוגי'שוןגיוןש'גיון 'שויגןש'ןוגיש'וןגיוןש'גיוןש'יגון'ש"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnAccept"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="מסכים"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

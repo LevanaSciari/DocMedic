@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context=".activities.RegisterUserActivity">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="center_horizontal"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textColor="#675B9E"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="57dp" />
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:text="SignUp"
+        android:textColor="#E61938"
+        android:textSize="20sp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.712" />
+
+
+    <EditText
+        android:id="@+id/FirstName"
+        android:layout_width="179dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="FirstName"
+        android:inputType="textPersonName"
+        android:textColorHint="#151515"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <EditText
+        android:id="@+id/LastName"
+        android:layout_width="179dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="LastName"
+        android:inputType="textPersonName"
+        android:textColorHint="#151515"
+        android:textColorLink="#E61938"
+        android:textIsSelectable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="179dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#151515"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.376" />
+
+    <EditText
+        android:id="@+id/user_id"
+        android:layout_width="179dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="user_id"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#151515"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/cell_phone"
+        android:layout_width="179dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="cell_phone"
+        android:inputType="phone"
+        android:textColorHint="#151515"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.376" />
+
+    <EditText
+        android:id="@+id/NumberWork"
+        android:layout_width="179dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:hint="NumberWork"
+        android:inputType="phone"
+        android:textColorHint="#151515"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <ImageButton
+        android:id="@+id/Return"
+        android:layout_width="80dp"
+        android:layout_height="47dp"
+        android:background="@null"
+        android:onClick="Return"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        tools:ignore="OnClick,VectorDrawableCompat" />
+    <!--    app:srcCompat="@drawable/ic_baseline_reply_24"-->
+
+    <Spinner
+        android:id="@+id/spinnerEmployeeType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/signUpBtn"
+        app:layout_constraintTop_toBottomOf="@+id/NumberWork"
+        tools:layout_editor_absoluteX="-31dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
