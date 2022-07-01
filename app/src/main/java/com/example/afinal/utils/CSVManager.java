@@ -36,8 +36,7 @@ public class CSVManager {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject obj = (JSONObject) jsonArray.get(i);
                 data.append("\n"
-                        + obj.getString("first_name") + ","
-                        + obj.getString("last_name") + ","
+                        + obj.getString("first_name") + obj.getString("last_name") + ","
                         + obj.getString("user_id") + ","
                         + obj.getString("job_title") + ","
                         + obj.getString("last_update"));

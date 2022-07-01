@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         } else {
             if (User.getInstance().didAgreeTerms) {
-                Intent internalIntent = new Intent(MainActivity.this, EmployeeActivity.class);
-                startActivity(internalIntent);
+                Intent employeeIntent = new Intent(MainActivity.this, EmployeeActivity.class);
+                startActivity(employeeIntent);
             } else {
                 Intent termsIntent = new Intent(MainActivity.this, SignTermsActivity.class);
                 startActivity(termsIntent);

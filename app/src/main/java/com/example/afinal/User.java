@@ -15,6 +15,7 @@ public class User {
     public String cellPhone;
     public String email;
     public String userID;
+    public String jobTitle;
     public boolean isLoggedIn;
     public boolean isManager;
     public boolean didAgreeTerms;
@@ -37,8 +38,10 @@ public class User {
             this.userID = dataObject.getString("user_id");
             this.cellPhone = dataObject.getString("cell_phone");
             this.uniqueId = dataObject.getString("unique_id");
+            this.jobTitle = dataObject.getString("job_title");
             this.employeeType = dataObject.getInt("type_employe");
             this.isManager = dataObject.getInt("is_manager") == 1;
+            this.didAgreeTerms = !dataObject.isNull("authorized_signatory");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -22,21 +22,21 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="57dp" />
 
+
     <Button
         android:id="@+id/signUpBtn"
         android:layout_width="190dp"
         android:layout_height="50dp"
+        android:background="@null"
         android:text="SignUp"
         android:textColor="#E61938"
         android:textSize="20sp"
-        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.712" />
-
+        app:layout_constraintVertical_bias="0.79" />
 
     <EditText
         android:id="@+id/FirstName"
@@ -152,6 +152,17 @@
         android:layout_marginHorizontal="40dp"
         app:layout_constraintBottom_toTopOf="@+id/signUpBtn"
         app:layout_constraintTop_toBottomOf="@+id/NumberWork"
-        tools:layout_editor_absoluteX="-31dp" />
+        app:layout_constraintVertical_bias="0.317"
+        tools:layout_editor_absoluteX="40dp" />
+
+    <Spinner
+        android:id="@+id/spinnerJobTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/signUpBtn"
+        app:layout_constraintTop_toBottomOf="@+id/NumberWork"
+        app:layout_constraintVertical_bias="0.78"
+        tools:layout_editor_absoluteX="40dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

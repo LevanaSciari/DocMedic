@@ -26,7 +26,7 @@ public class AdministratorActivity extends AppCompatActivity {
 
     }
 
-    public void signRule(View view) {
+    public void exportSignatures(View view) {
         exportSignatures();
     }
 
@@ -56,5 +56,10 @@ public class AdministratorActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void showSignatures(View view) {
+        Intent intent = new Intent(AdministratorActivity.this, SignatureListActivity.class);
+        startActivity(intent);
     }
 }

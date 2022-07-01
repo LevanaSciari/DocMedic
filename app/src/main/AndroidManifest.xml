@@ -44,6 +44,9 @@
         <activity
             android:name=".activities.AdministratorActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.SignatureListActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

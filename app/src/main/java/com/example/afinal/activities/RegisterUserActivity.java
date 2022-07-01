@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.afinal.R;
+import com.example.afinal.User;
 import com.example.afinal.activities.MainActivity;
 import com.example.afinal.networking.Requests;
 
@@ -23,8 +24,10 @@ import java.util.ArrayList;
 public class RegisterUserActivity extends AppCompatActivity  {
 
     String[] employeeOptions = {"Internal", "External", "Student"};
+    String[] jobTitles = {"Programmer", "Communication", "Cleaner"};
 
     private Spinner spinnerEmployeeType;
+    private Spinner spinnerJobTitle;
     Button signUpBtn;
     EditText firstName;
     EditText lastName;
@@ -53,15 +56,19 @@ public class RegisterUserActivity extends AppCompatActivity  {
         cell_phone = (EditText) findViewById(R.id.cell_phone);
         uniqueIdEt = (EditText) findViewById(R.id.NumberWork);
         spinnerEmployeeType = findViewById(R.id.spinnerEmployeeType);
+        spinnerJobTitle = findViewById(R.id.spinnerJobTitle);
 
         // Setting listeners
         signUpBtn.setOnClickListener(v -> {
             attemptRegistration();
         });
-        // Filling spinner with data
-        ArrayAdapter aa = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, employeeOptions);
-        aa.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        spinnerEmployeeType.setAdapter(aa);
+        // Filling spinners with data
+        ArrayAdapter aaEmployeeType = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, employeeOptions);
+        aaEmployeeType.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinnerEmployeeType.setAdapter(aaEmployeeType);
+        ArrayAdapter aaJobTitle = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, jobTitles);
+        aaJobTitle.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        spinnerJobTitle.setAdapter(aaJobTitle);
     }
 
     private void attemptRegistration() {
@@ -73,9 +80,11 @@ public class RegisterUserActivity extends AppCompatActivity  {
                 uniqueIdEt.getText().toString(),
                 userId.getText().toString(),
                 spinnerEmployeeType.getSelectedItemPosition(),
+                spinnerJobTitle.getSelectedItem().toString(),
                 new Requests.OnServerResponse() {
             @Override
             public void onSuccess(JSONObject response) {
+                User.getInstance().parseUser(response);
                 onRegisterSuccessful();
             }
 

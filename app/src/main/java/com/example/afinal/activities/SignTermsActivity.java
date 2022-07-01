@@ -51,7 +51,7 @@ public class SignTermsActivity extends AppCompatActivity {
     }
 
     private void sendAcceptTermsRequest() {
-        Requests.sendTermsRequest(getApplicationContext(), User.getInstance().uniqueId, Integer.valueOf(User.getInstance().employeeType).toString(), new Requests.OnServerResponse() {
+        Requests.sendTermsRequest(getApplicationContext(), User.getInstance().uniqueId, User.getInstance().jobTitle, new Requests.OnServerResponse() {
             @Override
             public void onSuccess(JSONObject response) {
                 User.getInstance().didAgreeTerms = true;

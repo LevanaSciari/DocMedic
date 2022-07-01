@@ -29,6 +29,7 @@ public class Requests {
                                            String uniqueId,
                                            String userId,
                                            int employeeType,
+                                           String jobTitle,
                                            OnServerResponse onServerResponse) {
         RequestQueue queue = Volley.newRequestQueue(context);
         String url = "http://" + IP_ADDRESS + ":5000/api/v1.0/api/register";
@@ -53,8 +54,8 @@ public class Requests {
                 params.put("user_id", userId);
                 params.put("cell_phone", cellPhone);
                 params.put("unique_id", uniqueId);
-                params.put("is_employe", "0");
                 params.put("type_employe", Integer.valueOf(employeeType).toString());
+                params.put("job_title", jobTitle);
                 return new JSONObject(params).toString().getBytes();
             }
 
@@ -116,6 +117,7 @@ public class Requests {
                 HashMap<String, String> params = new HashMap<>();
                 params.put("job_title", jobTitle);
                 params.put("unique_id", uniqueId);
+                params.put("signature_date", System.currentTimeMillis() + "");
                 params.put("authorized_signatory", "1");
                 return new JSONObject(params).toString().getBytes();
             }
