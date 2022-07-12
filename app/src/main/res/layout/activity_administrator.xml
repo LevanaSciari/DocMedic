@@ -21,31 +21,43 @@
         tools:layout_editor_absoluteY="39dp" />
 
     <Button
-        android:id="@+id/mashov"
+        android:id="@+id/mashovIsuk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="mashov"
-        android:text="mashov"
+        android:onClick="mashovIsuk"
+        android:text="mashov isuk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.346" />
-
+        app:layout_constraintVertical_bias="0.468" />
 
     <Button
-        android:id="@+id/diagram"
+        android:id="@+id/mashovCommun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="diagram"
-        android:text="diagram"
+        android:onClick="mashovCommun"
+        android:text="mashov communication"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintVertical_bias="0.358" />
+
+    <Button
+        android:id="@+id/mashovPhys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mashovPhys"
+        android:text="mashov physiotherapy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/exportSignatures"
@@ -55,7 +67,6 @@
         android:text="Export signatures"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.582" />
@@ -68,7 +79,7 @@
         android:text="Show signatures"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.699" />

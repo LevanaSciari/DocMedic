@@ -21,17 +21,60 @@
         tools:layout_editor_absoluteY="39dp" />
 
     <Button
-        android:id="@+id/mashov"
+        android:id="@+id/mashovPhys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="mashov"
-        android:text="mashov"
+        android:onClick="mashovPhys"
+        android:text="mashov PHYSIOTHERAPY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.346" />
+        app:layout_constraintVertical_bias="0.346"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/mashovCommun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mashovCommun"
+        android:text="mashov communication"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/mashovIsuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mashovIsuk"
+        android:text="mashov isuk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.579"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvEmployeeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/all_done_terms_signed"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-27dp" />
 
     <Button
         android:id="@+id/button4"

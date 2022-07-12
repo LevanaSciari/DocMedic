@@ -12,16 +12,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.afinal.R;
 import com.example.afinal.Signature;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class SignatureAdapter extends RecyclerView.Adapter<SignatureAdapter.ViewHolder> {
 
     public List<Signature> mData;
     private LayoutInflater mInflater;
+    private Context context;
 
     public SignatureAdapter(Context context, List<Signature> data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
+        this.context = context;
     }
 
     @NonNull
@@ -37,7 +41,8 @@ public class SignatureAdapter extends RecyclerView.Adapter<SignatureAdapter.View
         holder.tvName.setText(signature.name);
         holder.tvId.setText(signature.id);
         holder.tvJobTitle.setText(signature.jobTitle);
-        holder.tvDate.setText(signature.date);
+        Date date = new Date(Long.parseLong(signature.date));
+        holder.tvDate.setText(DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(date));
     }
 
     @Override

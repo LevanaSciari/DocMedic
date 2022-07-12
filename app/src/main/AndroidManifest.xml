@@ -47,6 +47,9 @@
         <activity
             android:name=".activities.SignatureListActivity"
             android:exported="false"/>
+        <activity
+            android:name=".activities.WebViewActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
