@@ -10,20 +10,25 @@
     <androidx.cardview.widget.CardView
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_margin="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#1E90FF"
-        app:cardCornerRadius="10dp"
-        android:onClick="Return">
+        android:onClick="Return"
+        app:cardCornerRadius="10dp">
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back"
-            android:background="@null"
             android:layout_gravity="center"
-            android:onClick="Return"/>
+            android:background="@null"
+            android:onClick="Return"
+            android:src="@drawable/ic_arrow_back" />
 
     </androidx.cardview.widget.CardView>
 

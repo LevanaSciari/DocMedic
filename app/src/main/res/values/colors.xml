@@ -10,5 +10,6 @@
     <color name="dark_blue">#0D3D6C</color>
     <color name="light_blue">#C3CFE6</color>
     <color name="grey_blue">#0B3153</color>
+    <color name="grey_blue_opace">#365068</color>
     <color name="grey">#C1C1C1</color>
 </resources>

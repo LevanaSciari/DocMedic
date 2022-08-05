@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.afinal.R;
@@ -18,21 +19,24 @@ import com.example.afinal.utils.MashovConstants;
 
 public class EmployeeActivity extends AppCompatActivity {
 
-    Button mashovIsuk, mashovCommun, mashovPhys;
+    View mashovIsuk, mashovCommun, mashovPhys;
     TextView tvEmployeeTitle;
+    ImageView ivEmployee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee);
-        mashovPhys = findViewById(R.id.mashovPhys);
-        mashovCommun = findViewById(R.id.mashovCommun);
-        mashovIsuk = findViewById(R.id.mashovIsuk);
+        mashovPhys = findViewById(R.id.cvBtnMashovPhys);
+        mashovCommun = findViewById(R.id.cvBtnMashovCommun);
+        mashovIsuk = findViewById(R.id.cvBtnMashovIsuk);
         tvEmployeeTitle = findViewById(R.id.tvEmployeeTitle);
+        ivEmployee = findViewById(R.id.ivEmployee);
         switch (User.getInstance().employeeType) {
             case EMPLOYEE_TYPE_INTERNAL:
             case EMPLOYEE_TYPE_EXTERNAL:
                 tvEmployeeTitle.setVisibility(View.VISIBLE);
+                ivEmployee.setVisibility(View.VISIBLE);
                 break;
             case EMPLOYEE_TYPE_STUDENT:
                 mashovPhys.setVisibility(View.VISIBLE);
@@ -48,7 +52,7 @@ public class EmployeeActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     public void mashovIsuk(View view) {
