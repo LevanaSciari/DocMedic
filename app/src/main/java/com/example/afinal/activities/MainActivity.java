@@ -6,6 +6,7 @@ import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,10 +17,10 @@ import com.example.afinal.networking.Requests;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
+    private View layoutPhoneNumber, layoutEmployeeNum; // EditTexts
+    private View layoutBtnLogin, layoutBtnRegister; // Buttons
     private EditText cellPhoneEt;
-    private EditText uniqueIdEt;
-    private Button loginBtn;
-    private Button registerBtn;
+    private EditText employeeNumEt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +32,29 @@ public class MainActivity extends AppCompatActivity {
             StrictMode.setThreadPolicy(policy);
         }
         // Finding views
-        cellPhoneEt = findViewById(R.id.cell_phone_login);
-        uniqueIdEt = findViewById(R.id.number_work_login);
-        loginBtn = findViewById(R.id.login);
-        registerBtn = findViewById(R.id.register);
+        layoutPhoneNumber = findViewById(R.id.layoutEtPhoneNumber);
+        layoutEmployeeNum = findViewById(R.id.layoutEtEmployeeNum);
+        layoutBtnLogin = findViewById(R.id.layoutBtnLogin);
+        layoutBtnRegister = findViewById(R.id.layoutBtnRegister);
+        cellPhoneEt = layoutPhoneNumber.findViewById(R.id.editText);
+        employeeNumEt = layoutEmployeeNum.findViewById(R.id.editText);
+        // Setting texts
+        ((TextView)layoutBtnLogin.findViewById(R.id.textView)).setText("כניסה");
+        ((TextView)layoutBtnRegister.findViewById(R.id.textView)).setText("הרשמה");
+        cellPhoneEt.setHint("מספר טלפון");
+        employeeNumEt.setHint("מספר עובד");
         // Setting listeners
-        loginBtn.setOnClickListener(v -> {
+        layoutBtnLogin.setOnClickListener(v -> {
             attemptLogin();
+        });
+        layoutBtnRegister.setOnClickListener(view -> {
+            startRegistrationFlow();
         });
     }
 
     private void attemptLogin() {
         String cell_phone_str = cellPhoneEt.getText().toString().trim();
-        String number_work_str = uniqueIdEt.getText().toString().trim();
+        String number_work_str = employeeNumEt.getText().toString().trim();
         Requests.sendLoginRequest(getApplicationContext(), cell_phone_str, number_work_str, new Requests.OnServerResponse() {
             @Override
             public void onSuccess(JSONObject response) {
@@ -75,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void startRegistrationFlow(View view) {
+    private void startRegistrationFlow() {
         Intent i = new Intent(MainActivity.this, RegisterUserActivity.class);
         startActivity(i);
     }
