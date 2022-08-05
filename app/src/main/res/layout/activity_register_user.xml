@@ -1,168 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
+    android:background="@color/light_blue"
     tools:context=".activities.RegisterUserActivity">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="20dp"
+        android:backgroundTint="#1E90FF"
+        app:cardCornerRadius="10dp"
+        android:onClick="Return">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:onClick="Return"/>
+
+    </androidx.cardview.widget.CardView>
+
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Register"
+        android:text="הרשמה"
         android:textAlignment="center"
-        android:textColor="#675B9E"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="57dp" />
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:fontFamily="sans-serif-medium"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"/>
+
+    <LinearLayout
+        android:id="@+id/llRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="right"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="20dp">
+
+        <include
+            android:id="@+id/layoutEtFirstName"
+            layout="@layout/blue_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="20dp"/>
+
+        <include
+            android:id="@+id/layoutEtLastName"
+            layout="@layout/blue_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="right"
+        android:layout_below="@id/llRow1"
+        android:layout_marginTop="25dp"
+        android:layout_marginHorizontal="20dp">
+
+        <include
+            android:id="@+id/layoutEtMail"
+            layout="@layout/blue_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="20dp"/>
+
+        <include
+            android:id="@+id/layoutEtPhoneNumber"
+            layout="@layout/blue_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="right"
+        android:layout_below="@id/llRow2"
+        android:layout_marginTop="25dp"
+        android:layout_marginHorizontal="20dp">
+
+        <include
+            android:id="@+id/layoutEtEmployeeNum"
+            layout="@layout/blue_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="20dp"/>
+
+        <include
+            android:id="@+id/layoutEtIdNum"
+            layout="@layout/blue_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="20dp"/>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSpinner1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/llRow3"
+        android:layout_marginHorizontal="100dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="30dp">
+
+        <Spinner
+            android:id="@+id/spinnerEmployeeType"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSpinner2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginHorizontal="100dp"
+        android:layout_below="@id/cvSpinner1"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="25dp">
+
+        <Spinner
+            android:id="@+id/spinnerJobTitle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+    </androidx.cardview.widget.CardView>
 
 
-    <Button
-        android:id="@+id/signUpBtn"
-        android:layout_width="190dp"
+    <include
+        android:id="@+id/layoutBtnSubmit"
+        layout="@layout/blue_btn"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@null"
-        android:text="SignUp"
-        android:textColor="#E61938"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        android:layout_below="@id/cvSpinner2"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="45dp" />
 
-    <EditText
-        android:id="@+id/FirstName"
-        android:layout_width="179dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:hint="FirstName"
-        android:inputType="textPersonName"
-        android:textColorHint="#151515"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
-
-    <EditText
-        android:id="@+id/LastName"
-        android:layout_width="179dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:hint="LastName"
-        android:inputType="textPersonName"
-        android:textColorHint="#151515"
-        android:textColorLink="#E61938"
-        android:textIsSelectable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
-
-    <EditText
-        android:id="@+id/mail"
-        android:layout_width="179dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#151515"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
-
-    <EditText
-        android:id="@+id/user_id"
-        android:layout_width="179dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:hint="user_id"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#151515"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/cell_phone"
-        android:layout_width="179dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:hint="cell_phone"
-        android:inputType="phone"
-        android:textColorHint="#151515"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
-
-    <EditText
-        android:id="@+id/NumberWork"
-        android:layout_width="179dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:hint="NumberWork"
-        android:inputType="phone"
-        android:textColorHint="#151515"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
-    <ImageButton
-        android:id="@+id/Return"
-        android:layout_width="80dp"
-        android:layout_height="47dp"
-        android:background="@null"
-        android:onClick="Return"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        tools:ignore="OnClick,VectorDrawableCompat" />
-    <!--    app:srcCompat="@drawable/ic_baseline_reply_24"-->
-
-    <Spinner
-        android:id="@+id/spinnerEmployeeType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/signUpBtn"
-        app:layout_constraintTop_toBottomOf="@+id/NumberWork"
-        app:layout_constraintVertical_bias="0.317"
-        tools:layout_editor_absoluteX="40dp" />
-
-    <Spinner
-        android:id="@+id/spinnerJobTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/signUpBtn"
-        app:layout_constraintTop_toBottomOf="@+id/NumberWork"
-        app:layout_constraintVertical_bias="0.78"
-        tools:layout_editor_absoluteX="40dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
