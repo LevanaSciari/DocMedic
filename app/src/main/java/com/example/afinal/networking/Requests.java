@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 public class Requests {
 
-    public static final String IP_ADDRESS = "192.168.56.1";
+    public static final String IP_ADDRESS = "34.228.27.132";
 
     public static void sendRegisterRequest(Context context,
                                            String firstName,

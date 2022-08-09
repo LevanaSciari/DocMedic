@@ -52,8 +52,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Sends login request
+     */
     private void attemptLogin() {
         String cell_phone_str = cellPhoneEt.getText().toString().trim();
+        if (!cell_phone_str.isEmpty() && cell_phone_str.startsWith("0"))
+            cell_phone_str = cell_phone_str.replaceFirst("0", "");
         String number_work_str = employeeNumEt.getText().toString().trim();
         Requests.sendLoginRequest(getApplicationContext(), cell_phone_str, number_work_str, new Requests.OnServerResponse() {
             @Override
@@ -68,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Called case login request was successful, performs all user data parsing and starts the proper activity according to user type and term signature status
+     */
     private void onLoginSuccessful(JSONObject response) {
         User.getInstance().isLoggedIn = true;
         User.getInstance().parseUser(response);
@@ -86,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Starts registration activity
+     */
     private void startRegistrationFlow() {
         Intent i = new Intent(MainActivity.this, RegisterUserActivity.class);
         startActivity(i);

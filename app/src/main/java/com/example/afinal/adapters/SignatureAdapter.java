@@ -37,6 +37,7 @@ public class SignatureAdapter extends RecyclerView.Adapter<SignatureAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        // When a cell is shown, loading data into view
         Signature signature = mData.get(position);
         holder.tvName.setText(signature.name);
         holder.tvId.setText(signature.id);
@@ -59,6 +60,7 @@ public class SignatureAdapter extends RecyclerView.Adapter<SignatureAdapter.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            // Finding views
             tvName = itemView.findViewById(R.id.tvName);
             tvId = itemView.findViewById(R.id.tvId);
             tvJobTitle = itemView.findViewById(R.id.tvJobTitle);

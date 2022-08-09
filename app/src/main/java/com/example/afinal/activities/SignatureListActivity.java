@@ -70,12 +70,14 @@ public class SignatureListActivity extends AppCompatActivity {
 
             }
         });
-        // Init listeners
+        // Init listeners, every time a filter button is clicked, the list is filtered with selected filter and text input
         btnName.setOnClickListener(v -> {
             selectedFilter = FILTER_NAME;
             if (adapter != null) {
+                // Filtering data
                 adapter.mData = filterSignatures(selectedFilter, signatures);
                 adapter.notifyDataSetChanged();
+                // Updating filter button state
                 btnName.setBackgroundColor(getResources().getColor(R.color.teal_200));
                 btnId.setBackgroundColor(getResources().getColor(R.color.white));
                 btnTitle.setBackgroundColor(getResources().getColor(R.color.white));
@@ -84,8 +86,10 @@ public class SignatureListActivity extends AppCompatActivity {
         btnId.setOnClickListener(v -> {
             selectedFilter = FILTER_ID;
             if (adapter != null) {
+                // Filtering data
                 adapter.mData = filterSignatures(selectedFilter, signatures);
                 adapter.notifyDataSetChanged();
+                // Updating filter button state
                 btnName.setBackgroundColor(getResources().getColor(R.color.white));
                 btnId.setBackgroundColor(getResources().getColor(R.color.teal_200));
                 btnTitle.setBackgroundColor(getResources().getColor(R.color.white));
@@ -94,8 +98,10 @@ public class SignatureListActivity extends AppCompatActivity {
         btnTitle.setOnClickListener(v -> {
             selectedFilter = FILTER_TITLE;
             if (adapter != null) {
+                // Filtering data
                 adapter.mData = filterSignatures(selectedFilter, signatures);
                 adapter.notifyDataSetChanged();
+                // Updating filter button state
                 btnName.setBackgroundColor(getResources().getColor(R.color.white));
                 btnId.setBackgroundColor(getResources().getColor(R.color.white));
                 btnTitle.setBackgroundColor(getResources().getColor(R.color.teal_200));
@@ -109,6 +115,7 @@ public class SignatureListActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 if (adapter != null) {
+                    // Filtering data according to provided text input and selected filter type
                     adapter.mData = filterSignatures(selectedFilter, signatures);
                     adapter.notifyDataSetChanged();
                 }
@@ -116,6 +123,11 @@ public class SignatureListActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * @param selectedFilter -> Selected filter type
+     * @param signatures -> Original signature list to be filtered
+     * @return -> Returns filtered signature list according to provided selectedFilter and user text input
+     */
     private List<Signature> filterSignatures(int selectedFilter, List<Signature> signatures) {
         String filter = etSearch.getText().toString().toLowerCase();
         List<Signature> filteredResults = new ArrayList<>();
@@ -138,10 +150,18 @@ public class SignatureListActivity extends AppCompatActivity {
         return filteredResults;
     }
 
+    /**
+     * @param onServerResponse -> Response listener
+     * Sends getTerms request and passes response to passed listener
+     */
     private void getTermsData(Requests.OnServerResponse onServerResponse) {
         Requests.sendGetTerms(this, onServerResponse);
     }
 
+    /**
+     * @param response -> Response received from getTerms
+     * @return -> Returns the received signature list from response
+     */
     private List<Signature> parseSignatures(JSONObject response) {
         try {
             List<Signature> signatures = new ArrayList<>();
@@ -158,7 +178,7 @@ public class SignatureListActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, AdministratorActivity.class));
     }
 
 }

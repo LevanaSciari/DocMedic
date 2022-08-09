@@ -19,6 +19,7 @@ public class WebViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
         webView = findViewById(R.id.webView);
+        // Settings webView settings
         WebSettings settings = webView.getSettings();
         settings.setDomStorageEnabled(true);
         settings.setJavaScriptEnabled(true);
@@ -36,9 +37,11 @@ public class WebViewActivity extends AppCompatActivity {
 
             @Override
             public void onPageFinished(WebView view, String url) {
+                // Loading url in case of redirect
                 webView.loadUrl(url);
             }
         });
+        // If a url has been provided, loading it initially
         if (getIntent() != null && getIntent().getExtras() != null && getIntent().getExtras().getString(KEY_URL) != null)
             webView.loadUrl(getIntent().getExtras().getString(KEY_URL));
     }

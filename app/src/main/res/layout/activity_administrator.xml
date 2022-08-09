@@ -36,13 +36,13 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="שלום מנהל"
-        android:gravity="center"
-        android:textColor="@color/white"
         android:layout_below="@id/btnBack"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="שלום מנהל"
+        android:textColor="@color/white"
         android:textSize="40sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true" />
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/btnMashovCommun"

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -41,19 +42,22 @@ public class SignTermsActivity extends AppCompatActivity {
         switch (User.getInstance().employeeType) {
             case EMPLOYEE_TYPE_INTERNAL:
                 tvTitle.setText("הנחיות עבודה למטפלים");
-                tvTerms.setText(R.string.scrollTextMetaplim);
+                tvTerms.setText(Html.fromHtml(getResources().getString(R.string.scrollTextMetaplim)));
                 break;
             case EMPLOYEE_TYPE_EXTERNAL:
                 tvTitle.setText("הנחיות עבודה למטפלים חיצוניים");
-                tvTerms.setText(R.string.scrollTextMetaplimHotz);
+                tvTerms.setText(Html.fromHtml(getResources().getString(R.string.scrollTextMetaplimHotz)));
                 break;
             case EMPLOYEE_TYPE_STUDENT:
                 tvTitle.setText("הנחיות עבודה לסטודנטים");
-                tvTerms.setText(R.string.scrollTextStudent);
+                tvTerms.setText(Html.fromHtml(getResources().getString(R.string.scrollTextStudent)));
                 break;
         }
     }
 
+    /**
+     * Sends accept terms request, in case of success starts employee activity
+     */
     private void sendAcceptTermsRequest() {
         Requests.sendTermsRequest(getApplicationContext(), User.getInstance().uniqueId, User.getInstance().jobTitle, new Requests.OnServerResponse() {
             @Override

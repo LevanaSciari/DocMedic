@@ -86,11 +86,17 @@ public class RegisterUserActivity extends AppCompatActivity  {
         spinnerJobTitle.setAdapter(aaJobTitle);
     }
 
+    /**
+     * Sends register request
+     */
     private void attemptRegistration() {
+        String cell_phone_str = cell_phone.getText().toString().trim();
+        if (!cell_phone_str.isEmpty() && cell_phone_str.startsWith("0"))
+            cell_phone_str = cell_phone_str.replaceFirst("0", "");
         Requests.sendRegisterRequest(getApplicationContext(),
                 firstName.getText().toString(),
                 lastName.getText().toString(),
-                cell_phone.getText().toString(),
+                cell_phone_str,
                 emailEditText.getText().toString(),
                 uniqueIdEt.getText().toString(),
                 userId.getText().toString(),
@@ -99,7 +105,10 @@ public class RegisterUserActivity extends AppCompatActivity  {
                 new Requests.OnServerResponse() {
             @Override
             public void onSuccess(JSONObject response) {
+                // Parsing user and saving its data
                 User.getInstance().parseUser(response);
+                User.getInstance().isLoggedIn = true;
+                // Starting terms activity
                 onRegisterSuccessful();
             }
 
@@ -110,6 +119,9 @@ public class RegisterUserActivity extends AppCompatActivity  {
         });
     }
 
+    /**
+     * In case registration was successful, starts term signature activity
+     */
     private void onRegisterSuccessful() {
         Intent i = new Intent(RegisterUserActivity.this, SignTermsActivity.class);
         startActivity(i);

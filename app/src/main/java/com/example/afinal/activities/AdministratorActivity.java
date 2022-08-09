@@ -26,15 +26,10 @@ public class AdministratorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_administrator);
     }
 
+    /**
+     * Gets all terms signatures and exports them in a csv file format
+     */
     public void exportSignatures(View view) {
-        exportSignatures();
-    }
-
-    public void back(View view) {
-        startActivity(new Intent(this, MainActivity.class));
-    }
-
-    private void exportSignatures() {
         Requests.sendGetTerms(getApplicationContext(), new Requests.OnServerResponse() {
             @Override
             public void onSuccess(JSONObject response) {
@@ -53,11 +48,17 @@ public class AdministratorActivity extends AppCompatActivity {
         });
     }
 
+    public void back(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
+    // Starts signature list view activity
     public void showSignatures(View view) {
         Intent intent = new Intent(AdministratorActivity.this, SignatureListActivity.class);
         startActivity(intent);
     }
 
+    // Methods below open the google form web page with the proper form url
     public void mashovIsuk(View view) {
         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(MashovConstants.ISUK_CLINIC_RESPONSES_URL));
         startActivity(i);

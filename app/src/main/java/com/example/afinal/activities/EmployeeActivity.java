@@ -20,18 +20,21 @@ import com.example.afinal.utils.MashovConstants;
 public class EmployeeActivity extends AppCompatActivity {
 
     View mashovIsuk, mashovCommun, mashovPhys;
-    TextView tvEmployeeTitle;
+    TextView tvEmployeeTitle, tvTitle;
     ImageView ivEmployee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee);
+        // Finding views
         mashovPhys = findViewById(R.id.cvBtnMashovPhys);
         mashovCommun = findViewById(R.id.cvBtnMashovCommun);
         mashovIsuk = findViewById(R.id.cvBtnMashovIsuk);
         tvEmployeeTitle = findViewById(R.id.tvEmployeeTitle);
+        tvTitle = findViewById(R.id.tvTitle);
         ivEmployee = findViewById(R.id.ivEmployee);
+        // Showing proper ui according to employee type
         switch (User.getInstance().employeeType) {
             case EMPLOYEE_TYPE_INTERNAL:
             case EMPLOYEE_TYPE_EXTERNAL:
@@ -42,18 +45,16 @@ public class EmployeeActivity extends AppCompatActivity {
                 mashovPhys.setVisibility(View.VISIBLE);
                 mashovCommun.setVisibility(View.VISIBLE);
                 mashovIsuk.setVisibility(View.VISIBLE);
+                tvTitle.setVisibility(View.VISIBLE);
                 break;
         }
-    }
-
-    public void signRuleEmployee(View view) {
-        Intent i = new Intent(EmployeeActivity.this, SignTermsActivity.class);
-        startActivity(i);
     }
 
     public void back(View view) {
         startActivity(new Intent(this, MainActivity.class));
     }
+
+    // Methods below start @WebViewActivity with passing the proper google form url
 
     public void mashovIsuk(View view) {
         Intent i = new Intent(EmployeeActivity.this, WebViewActivity.class);
