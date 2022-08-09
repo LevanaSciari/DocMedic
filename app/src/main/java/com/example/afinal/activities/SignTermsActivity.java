@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ import org.json.JSONObject;
 
 public class SignTermsActivity extends AppCompatActivity {
 
-    private Button btnAccept;
+    private View layoutBtnAgree;
     private TextView tvTitle;
     private TextView tvTerms;
 
@@ -29,11 +30,14 @@ public class SignTermsActivity extends AppCompatActivity {
         // Finding views
         tvTitle = findViewById(R.id.tvTitle);
         tvTerms = findViewById(R.id.tvTerms);
-        btnAccept = findViewById(R.id.btnAccept);
-        // Settings listeners
-        btnAccept.setOnClickListener(v -> {
+        layoutBtnAgree = findViewById(R.id.layoutBtnAgree);
+        // Setting listeners
+        layoutBtnAgree.setOnClickListener(v -> {
             sendAcceptTermsRequest();
         });
+        // Setting texts
+        ((TextView) layoutBtnAgree.findViewById(R.id.textView)).setText("מאשר");
+        // Showing terms by employee type
         switch (User.getInstance().employeeType) {
             case EMPLOYEE_TYPE_INTERNAL:
                 tvTitle.setText("הנחיות עבודה למטפלים");
@@ -65,4 +69,9 @@ public class SignTermsActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void back(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
 }

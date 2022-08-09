@@ -62,6 +62,6 @@
         android:layout_height="50dp"
         android:layout_below="@id/layoutBtnLogin"
         android:layout_marginHorizontal="120dp"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp" />
 
 </RelativeLayout>

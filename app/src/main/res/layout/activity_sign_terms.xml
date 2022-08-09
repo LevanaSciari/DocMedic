@@ -4,26 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SignTermsActivity">
+    tools:context=".activities.SignTermsActivity"
+    android:background="@color/light_blue">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btnBack"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#1E90FF"
+        android:onClick="back"
+        app:cardCornerRadius="10dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:onClick="back"
+            android:src="@drawable/ic_arrow_back" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="סטודנטים - עבודה"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="20dp"
-        android:layout_alignParentTop="true"
-        android:gravity="center_horizontal"/>
+        android:text="חתימת נהלים"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_below="@id/btnBack"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/llBtns"
+        android:layout_above="@id/layoutBtnAgree"
         android:layout_below="@id/tvTitle"
-        android:layout_marginVertical="20dp"
-        android:layout_marginHorizontal="20dp">
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp">
 
         <TextView
             android:id="@+id/tvTerms"
@@ -35,22 +62,23 @@
 
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/llBtns"
+    <include
+        android:id="@+id/layoutBtnAgree"
+        layout="@layout/blue_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="120dp"
         android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_above="@id/ivBottom"/>
 
-        <Button
-            android:id="@+id/btnAccept"
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:text="מסכים" />
-
-
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/ivBottom"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_ariel_temp" />
 
 </RelativeLayout>
