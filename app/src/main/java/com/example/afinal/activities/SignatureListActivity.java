@@ -1,10 +1,13 @@
 package com.example.afinal.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +32,7 @@ public class SignatureListActivity extends AppCompatActivity {
     public static final int FILTER_ID = 1;
     public static final int FILTER_TITLE = 2;
 
+    View layoutEtSearch;
     EditText etSearch;
     Button btnName, btnId, btnTitle;
     int selectedFilter;
@@ -40,15 +44,16 @@ public class SignatureListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signature_list);
         // Finding views
-        etSearch = findViewById(R.id.etSearch);
+        layoutEtSearch = findViewById(R.id.layoutEtSearch);
+        etSearch = ((EditText) layoutEtSearch.findViewById(R.id.editText));
         btnName = findViewById(R.id.btnName);
         btnId = findViewById(R.id.btnId);
         btnTitle = findViewById(R.id.btnTitle);
         // Init selected filter
         selectedFilter = FILTER_NAME;
-        btnName.setTextColor(getResources().getColor(R.color.teal_200));
-        btnId.setTextColor(getResources().getColor(R.color.white));
-        btnTitle.setTextColor(getResources().getColor(R.color.white));
+        btnName.setBackgroundColor(getResources().getColor(R.color.teal_200));
+        btnId.setBackgroundColor(getResources().getColor(R.color.white));
+        btnTitle.setBackgroundColor(getResources().getColor(R.color.white));
         // Getting data from server and then showing it
         getTermsData(new Requests.OnServerResponse() {
             @Override
@@ -71,9 +76,9 @@ public class SignatureListActivity extends AppCompatActivity {
             if (adapter != null) {
                 adapter.mData = filterSignatures(selectedFilter, signatures);
                 adapter.notifyDataSetChanged();
-                btnName.setTextColor(getResources().getColor(R.color.teal_200));
-                btnId.setTextColor(getResources().getColor(R.color.white));
-                btnTitle.setTextColor(getResources().getColor(R.color.white));
+                btnName.setBackgroundColor(getResources().getColor(R.color.teal_200));
+                btnId.setBackgroundColor(getResources().getColor(R.color.white));
+                btnTitle.setBackgroundColor(getResources().getColor(R.color.white));
             }
         });
         btnId.setOnClickListener(v -> {
@@ -81,9 +86,9 @@ public class SignatureListActivity extends AppCompatActivity {
             if (adapter != null) {
                 adapter.mData = filterSignatures(selectedFilter, signatures);
                 adapter.notifyDataSetChanged();
-                btnName.setTextColor(getResources().getColor(R.color.white));
-                btnId.setTextColor(getResources().getColor(R.color.teal_200));
-                btnTitle.setTextColor(getResources().getColor(R.color.white));
+                btnName.setBackgroundColor(getResources().getColor(R.color.white));
+                btnId.setBackgroundColor(getResources().getColor(R.color.teal_200));
+                btnTitle.setBackgroundColor(getResources().getColor(R.color.white));
             }
         });
         btnTitle.setOnClickListener(v -> {
@@ -91,9 +96,9 @@ public class SignatureListActivity extends AppCompatActivity {
             if (adapter != null) {
                 adapter.mData = filterSignatures(selectedFilter, signatures);
                 adapter.notifyDataSetChanged();
-                btnName.setTextColor(getResources().getColor(R.color.white));
-                btnId.setTextColor(getResources().getColor(R.color.white));
-                btnTitle.setTextColor(getResources().getColor(R.color.teal_200));
+                btnName.setBackgroundColor(getResources().getColor(R.color.white));
+                btnId.setBackgroundColor(getResources().getColor(R.color.white));
+                btnTitle.setBackgroundColor(getResources().getColor(R.color.teal_200));
             }
         });
         etSearch.addTextChangedListener(new TextWatcher() {
@@ -151,4 +156,9 @@ public class SignatureListActivity extends AppCompatActivity {
         }
         return new ArrayList<>();
     }
+
+    public void back(View view) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
 }
