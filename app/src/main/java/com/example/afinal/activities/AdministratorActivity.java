@@ -31,8 +31,7 @@ public class AdministratorActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
-        Intent i = new Intent(AdministratorActivity.this, MainActivity.class);
-        startActivity(i);
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     private void exportSignatures() {

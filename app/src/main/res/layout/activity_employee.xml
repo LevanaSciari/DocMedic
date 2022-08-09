@@ -56,8 +56,8 @@
         android:visibility="gone" />
 
     <androidx.cardview.widget.CardView
-        android:visibility="gone"
         android:id="@+id/cvBtnMashovCommun"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:backgroundTint="@color/grey_blue_opace"
