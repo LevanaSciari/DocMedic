@@ -80,14 +80,15 @@ public class MainActivity extends AppCompatActivity {
         User.getInstance().isLoggedIn = true;
         User.getInstance().parseUser(response);
 
+        // If user isManager is true, starting admin activity
         if (User.getInstance().isManager) {
             Intent i = new Intent(MainActivity.this, AdministratorActivity.class);
             startActivity(i);
         } else {
-            if (User.getInstance().didAgreeTerms) {
+            if (User.getInstance().didAgreeTerms) { // Case user agreed to terms, signing him in
                 Intent employeeIntent = new Intent(MainActivity.this, EmployeeActivity.class);
                 startActivity(employeeIntent);
-            } else {
+            } else { // Case terms have not been agreed, starting sign terms activity
                 Intent termsIntent = new Intent(MainActivity.this, SignTermsActivity.class);
                 startActivity(termsIntent);
             }
