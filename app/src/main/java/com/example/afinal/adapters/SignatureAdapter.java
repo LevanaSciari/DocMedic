@@ -42,7 +42,11 @@ public class SignatureAdapter extends RecyclerView.Adapter<SignatureAdapter.View
         holder.tvName.setText(signature.name);
         holder.tvId.setText(signature.id);
         holder.tvJobTitle.setText(signature.jobTitle);
-        Date date = new Date(Long.parseLong(signature.date));
+        System.out.println(signature.date);
+
+        long t = Long.parseLong(signature.date) * 1000;
+        long HOUR = 3600*1000; // in milli-seconds.
+        Date date = new Date(t + 3 * HOUR);
         holder.tvDate.setText(DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(date));
     }
 
