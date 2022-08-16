@@ -18,7 +18,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class Requests {
-
+//IP ADRESS AMAZON
     public static final String IP_ADDRESS = "34.228.27.132";
 
     public static void sendRegisterRequest(Context context,

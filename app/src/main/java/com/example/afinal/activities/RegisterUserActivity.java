@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class RegisterUserActivity extends AppCompatActivity  {
 
     String[] employeeOptions = {"עובד פנימי", "עובד חיצוני", "סטודנט"};
-    String[] jobTitles = {"מפתחת", "מתקשר", "מנקה"};
+    String[] jobTitles = {"קלינאית תקשורת", "מרפאה בעיסוק", "פיזיותרפיה"};
 
     private Spinner spinnerEmployeeType;
     private Spinner spinnerJobTitle;
@@ -37,12 +37,12 @@ public class RegisterUserActivity extends AppCompatActivity  {
     EditText userId;
     EditText cell_phone;
     EditText uniqueIdEt;
-    Uri imageUri;
-    String activity;
-    String selectedRegion;
-    String email_;
-
-    ArrayList<String> regionsArray = new ArrayList<String>();
+//    Uri imageUri;
+//    String activity;
+//    String selectedRegion;
+//    String email_;
+//
+//    ArrayList<String> regionsArray = new ArrayList<String>();
 
 
     @Override
