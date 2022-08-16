@@ -12,6 +12,8 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class CSVManager {
@@ -35,11 +37,17 @@ public class CSVManager {
             // Adding Data to file
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject obj = (JSONObject) jsonArray.get(i);
+
+                long t = Long.parseLong(obj.getString("last_update")) * 1000;
+                long HOUR = 3600*1000; // in milli-seconds.
+                Date date = new Date(t + 3 * HOUR);
+//                DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(date));
+
                 data.append("\n"
                         + obj.getString("first_name") + ","+ obj.getString("last_name") + ","
                         + obj.getString("user_id") + ","
                         + obj.getString("job_title") + ","
-                        + obj.getString("last_update"));
+                        + DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(date));
             }
 
             // Saving file onto device
