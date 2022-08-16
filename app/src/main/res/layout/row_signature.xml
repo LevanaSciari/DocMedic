@@ -9,108 +9,125 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="right"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="Name:"/>
 
         <TextView
             android:id="@+id/tvName"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:layout_marginStart="10dp"
-            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
             android:text="John Doe"
-            android:layout_marginLeft="10dp" />
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+
+            android:text=" שם: "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="right"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:text="ID:"/>
+
+
 
         <TextView
             android:id="@+id/tvId"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:layout_marginStart="10dp"
-            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
             android:text="3152586315"
-            android:layout_marginLeft="10dp" />
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+
+            android:text=" תז : "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="right"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:text="Title:"/>
 
         <TextView
             android:id="@+id/tvJobTitle"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:layout_marginStart="10dp"
-            android:text="Programmer"
+            android:layout_marginLeft="10dp"
+            android:text="programmer"
             android:textColor="@color/white"
-            android:layout_marginLeft="10dp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+
+            android:text=" מקצוע : "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="right"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+
+            android:text="July 1st, 2022, 15:04"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:text="Date:"/>
+            android:text="תאריך:"
 
-        <TextView
-            android:id="@+id/tvDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginStart="10dp"
             android:textColor="@color/white"
-            android:text="July 1st, 2022, 15:04"
-            android:layout_marginLeft="10dp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
-
 </LinearLayout>

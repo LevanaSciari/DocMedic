@@ -10,7 +10,7 @@ public class Signature {
 
     public Signature(JSONObject jsonObject) {
         try {
-            this.name = jsonObject.getString("first_name") + jsonObject.getString("last_name");
+            this.name = jsonObject.getString("first_name") +" "+ jsonObject.getString("last_name");
             this.jobTitle = jsonObject.getString("job_title");
             this.id = jsonObject.getString("user_id");
             this.date = jsonObject.getString("last_update");
