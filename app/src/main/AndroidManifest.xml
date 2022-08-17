@@ -24,7 +24,7 @@
         </provider>
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,22 +33,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.RegisterUserActivity"
+            android:name=".views.RegisterUserActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.SignTermsActivity"
+            android:name=".views.SignTermsActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.EmployeeActivity"
+            android:name=".views.EmployeeActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.AdministratorActivity"
+            android:name=".views.AdministratorActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.SignatureListActivity"
+            android:name=".views.SignatureListActivity"
             android:exported="false"/>
         <activity
-            android:name=".activities.WebViewActivity"
+            android:name=".views.WebViewActivity"
             android:exported="false"/>
     </application>
 

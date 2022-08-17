@@ -1,4 +1,4 @@
-package com.example.afinal.utils;
+package com.example.afinal.models;
 
 public class MashovConstants {
     public static final String PHYSIOTHERAPY_CLINIC_RESPONSES_URL = "https://docs.google.com/forms/d/1r6dfJKvkhgO9TvWla-JDsABALbjX7AF4APaJ1anTTlQ/edit#responses";

@@ -1,4 +1,4 @@
-package com.example.afinal.networking;
+package com.example.afinal.controller;
 
 import android.content.Context;
 
@@ -9,9 +9,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.afinal.User;
+import com.example.afinal.models.User;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

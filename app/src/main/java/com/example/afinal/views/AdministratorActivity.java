@@ -1,6 +1,4 @@
-package com.example.afinal.activities;
-
-import static com.example.afinal.activities.WebViewActivity.KEY_URL;
+package com.example.afinal.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,12 +6,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import com.example.afinal.R;
-import com.example.afinal.networking.Requests;
-import com.example.afinal.utils.CSVManager;
-import com.example.afinal.utils.MashovConstants;
+import com.example.afinal.controller.Requests;
+import com.example.afinal.models.CSVManager;
+import com.example.afinal.models.MashovConstants;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

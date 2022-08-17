@@ -1,4 +1,4 @@
-package com.example.afinal.activities;
+package com.example.afinal.views;
 
 import android.os.Bundle;
 import android.webkit.WebResourceRequest;

@@ -1,18 +1,19 @@
-package com.example.afinal.activities;
+package com.example.afinal.views;
+
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.afinal.R;
-import com.example.afinal.User;
-import com.example.afinal.networking.Requests;
+import com.example.afinal.models.User;
+import com.example.afinal.controller.Requests;
 
 import org.json.JSONObject;
 
@@ -44,8 +45,23 @@ public class MainActivity extends AppCompatActivity {
         cellPhoneEt.setHint("מספר טלפון");
         employeeNumEt.setHint("מספר עובד");
         // Setting listeners
-        layoutBtnLogin.setOnClickListener(v -> {
-            attemptLogin();
+
+        layoutBtnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phoneS = cellPhoneEt.getText().toString(); //phone string
+                String employeeNumS = employeeNumEt.getText().toString(); // password string
+                if (phoneS.isEmpty()) {
+                    cellPhoneEt.setError("אנא הכנס מספר טלפון");
+                    return;
+                }
+                if (employeeNumS.isEmpty()) {
+                    employeeNumEt.setError("אנא הכנס מספר עובד");
+                    return;
+                }
+                attemptLogin();
+            }
+
         });
         layoutBtnRegister.setOnClickListener(view -> {
             startRegistrationFlow();
@@ -68,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(String errorMessage) {
+                Toast.makeText(MainActivity.this , "פרטים לא נכונים או שהמשתמש לא קיים" , Toast.LENGTH_LONG).show();
+
 
             }
         });
@@ -79,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
     private void onLoginSuccessful(JSONObject response) {
         User.getInstance().isLoggedIn = true;
         User.getInstance().parseUser(response);
+        Toast.makeText(MainActivity.this , "כניסה הוצלחה" , Toast.LENGTH_LONG).show();
 
         // If user isManager is true, starting admin activity
         if (User.getInstance().isManager) {

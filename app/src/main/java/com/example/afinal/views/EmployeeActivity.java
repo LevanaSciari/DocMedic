@@ -1,21 +1,20 @@
-package com.example.afinal.activities;
+package com.example.afinal.views;
 
-import static com.example.afinal.User.EMPLOYEE_TYPE_EXTERNAL;
-import static com.example.afinal.User.EMPLOYEE_TYPE_INTERNAL;
-import static com.example.afinal.User.EMPLOYEE_TYPE_STUDENT;
+import static com.example.afinal.models.User.EMPLOYEE_TYPE_EXTERNAL;
+import static com.example.afinal.models.User.EMPLOYEE_TYPE_INTERNAL;
+import static com.example.afinal.models.User.EMPLOYEE_TYPE_STUDENT;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.afinal.R;
-import com.example.afinal.User;
-import com.example.afinal.utils.MashovConstants;
+import com.example.afinal.models.User;
+import com.example.afinal.models.MashovConstants;
 
 public class EmployeeActivity extends AppCompatActivity {
 

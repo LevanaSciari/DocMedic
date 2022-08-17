@@ -1,4 +1,4 @@
-package com.example.afinal.activities;
+package com.example.afinal.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.afinal.R;
-import com.example.afinal.Signature;
+import com.example.afinal.models.Signature;
 import com.example.afinal.adapters.SignatureAdapter;
-import com.example.afinal.networking.Requests;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.codec.binary.StringUtils;
+import com.example.afinal.controller.Requests;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

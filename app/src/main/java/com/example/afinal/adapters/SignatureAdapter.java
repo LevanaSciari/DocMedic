@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.afinal.R;
-import com.example.afinal.Signature;
+import com.example.afinal.models.Signature;
 
 import java.text.DateFormat;
 import java.util.Date;

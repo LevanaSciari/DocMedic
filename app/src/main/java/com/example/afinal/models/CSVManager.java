@@ -1,4 +1,4 @@
-package com.example.afinal.utils;
+package com.example.afinal.models;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class CSVManager {
 
