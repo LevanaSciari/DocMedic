@@ -19,10 +19,8 @@ DocMedic
    * אנא מלא\י את כל הפרטים ולחצ\י המשך
 
 
-![Screenshot from 2022-08-16 20-54-09 (copy)](https://user-images.githubusercontent.com/57623323/186492575-1ac7599d-ae27-4dfe-95bc-4f06ac34a758.png)
 
-
- <p><img src="https://user-images.githubusercontent.com/74377162/185808702-aaa23e13-82ac-47ed-b971-74d6f8d8df02.png" alt="register" style="float:right;width:200px;height:300px;"> הרשמה
+ <p><img src="https://user-images.githubusercontent.com/57623323/186492575-1ac7599d-ae27-4dfe-95bc-4f06ac34a758.png" alt="register" style="float:right;width:200px;height:300px;"> הרשמה
 </p>      
    
    * לאחר ההרשמה\הכניסה יש לקרוא ולאשר את הנחיות עבודה לסטודנט, שימ\י לב אם אינך מאשר\ת את הנהלים, לא ניתן להמשיך לעמוד הבא!
