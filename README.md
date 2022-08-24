@@ -56,6 +56,9 @@ DocMedic
 <p><img src="https://user-images.githubusercontent.com/74377162/185811766-1173de4f-5ca7-4d5a-a04e-e32a84a65d1f.png" alt="server code" style="float:right;width:300px;height:300px;"> קוד שרת
 </p>
 
+![image](https://user-images.githubusercontent.com/57485490/186393062-315e4905-5fc2-43fc-beb1-ad067e02f29f.png)
+
+
 
 
    
